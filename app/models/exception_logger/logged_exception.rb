@@ -1,5 +1,5 @@
 module ExceptionLogger
-  class LoggedException < ActiveRecord::Base
+  class LoggedException < LogsDB::LogDB
     self.table_name = "logged_exceptions"
     HOSTNAME = `hostname -s`.chomp
     class << self
