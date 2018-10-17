@@ -59,7 +59,8 @@ module ExceptionLogger
         if(value.class != Hash and value.class != ActiveSupport::HashWithIndifferentAccess)
           params[key] = '[FILTERED]' if rails_filter_parameters.include?(key.to_sym)
         else
-          params[key] = filter_sub_parameters(value)
+           #adding missing param at the call 
+          params[key] = filter_sub_parameters(value,rails_filter_parameters)
         end
       end
       params
